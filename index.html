@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zaynixthics — A digital universe by Zyann.exe.">
+<meta name="theme-color" content="#050807">
+<title>ZAYNIXTHICS | Digital Universe</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050807;
+  color: #b8ffd9;
+  font-family: monospace;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #176b45;
+  padding: 28px;
+  box-shadow: 0 0 30px #00ff6615;
+}
+
+.top {
+  color: #00ff88;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 35px;
+}
+
+h1 {
+  color: #00ff88;
+  font-size: clamp(30px, 8vw, 48px);
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #00ff8866;
+  overflow-wrap: anywhere;
+}
+
+.subtitle {
+  color: #628b75;
+  font-size: 12px;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.line {
+  height: 1px;
+  background: #176b45;
+  margin: 25px 0;
+}
+
+.info {
+  color: #6d997e;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.invitation {
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid #176b45;
+  background: #09140e;
+}
+
+h2 {
+  color: #00ff88;
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.question {
+  font-size: 22px;
+  color: white;
+  margin: 20px 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+button {
+  flex: 1;
+  min-width: 110px;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button:hover {
+  background: #00ff88;
+  color: #050807;
+}
+
+#response {
+  margin-top: 22px;
+  color: #00ff88;
+  font-size: 13px;
+  line-height: 1.8;
+  min-height: 40px;
+}
+
+.footer {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 11px;
+  color: #426a52;
+  line-height: 2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top">
+    ● SYSTEM ONLINE
+    <br>
+    ZN // DIGITAL INTERFACE
+  </div>
+
+  <h1>ZAYNIXTHICS</h1>
+
+  <div class="subtitle">
+    DIGITAL UNIVERSE // EST. 2026
+  </div>
+
+  <div class="line"></div>
+
+  <div class="info">
+    [ SYSTEM INITIALIZED ]<br>
+    [ PROTOCOL: ZN-001 ]<br>
+    [ ACCESS: PUBLIC ]<br>
+    [ SESSION: <span id="session"></span> ]
+  </div>
+
+  <div class="line"></div>
+
+  <div class="invitation">
+
+    <h2>INCOMING INVITATION</h2>
+
+    <div class="info">
+      A new transmission has arrived.
+      <br>
+      Your response is requested.
+    </div>
+
+    <div class="question">
+      Wanna play a game?
+    </div>
+
+    <div class="info">
+      SELECT YOUR RESPONSE:
+    </div>
+
+    <div class="buttons">
+      <button onclick="respond('ACCEPT')">
+        [ ACCEPT ]
+      </button>
+
+      <button onclick="respond('DECLINE')">
+        [ DECLINE ]
+      </button>
+    </div>
+
+    <div id="response">
+      > Awaiting response...
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+  <div class="info">
+    CREATOR: Zyann.exe<br>
+    PROJECT: Zaynixthics<br>
+    STATUS: OPERATIONAL
+  </div>
+
+  <div class="footer">
+    © 2026 ZAYNIXTHICS
+    <br>
+    END OF TRANSMISSION.
+  </div>
+
+</div>
+
+<script>
+
+const chars = "0123456789ABCDEF";
+let session = "";
+
+for(let i = 0; i < 8; i++) {
+  session += chars[Math.floor(Math.random() * 16)];
+}
+
+document.getElementById("session").textContent = session;
+
+function respond(choice) {
+
+  const output = document.getElementById("response");
+
+  if(choice === "ACCEPT") {
+    output.innerHTML =
+      "> ACCESS GRANTED.<br>" +
+      "> Welcome to the game.";
+  }
+
+  else {
+    output.innerHTML =
+      "> INVITATION DECLINED.<br>" +
+      "> Transmission terminated.";
+  }
+
+}
+
+</script>
+
+</body>
+</html>
